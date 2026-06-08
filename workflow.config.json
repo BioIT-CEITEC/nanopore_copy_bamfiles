@@ -1,12 +1,12 @@
 {
   "workflow_description": {
-    "name":"nanopore_copy_raw_data",
+    "name":"nanopore_copy_bamfiles",
     "version": 1.0,
-    "label":"Copy raw signals",
+    "label":"Copy bam files",
     "type":"run_demultiplexing",
     "inputs":"{run_dir}/*",
     "outputs":[
-      "raw_reads/{sample}/*"
+      "aligned/{sample}/*"
     ],
     "run_parameters": {
       "cpu": 30,
@@ -23,27 +23,5 @@
     "i7_name"
   ],
   "gui_params" : {
-    "primary" : {
-      "library_name_wrong": {
-        "label": "Wrong library name",
-        "info": "Is the library name in sequia different than folder in path?",
-        "type": "bool",
-        "default": true
-      },
-      "library_name": {
-        "label": "Name of the parent folder",
-        "info": "Write name of the parent folder for flowcells",
-        "type": "string",
-        "conditions": {
-          "relevance": {
-            "operand": "equal",
-            "negation": true,
-            "values": {
-              "library_name_wrong": false
-            }
-          }
-        }
-      }
-      }
   } 
 }

@@ -21,5 +21,7 @@
     "run_dir",
     "run_sequencer_type",
     "i7_name"
-  ]
+  ],
+  "gui_params" : {
+  }
 }

@@ -65,7 +65,7 @@ rule bam_merge:
     params:
         input_count = lambda wildcards, input: len(input.bams),
         new_dir="{library_path_name}/raw_reads/{sample_name}"
-    conda: "envs/bam_merge.yaml"
+    conda: "envs/samtools-merge-env.yaml"
     threads: workflow.cores * 0.75
     shell:
         """
